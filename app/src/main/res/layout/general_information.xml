@@ -1,0 +1,974 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal">
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:visibility="gone"
+        android:id="@+id/load">
+        <!--android:layout_marginTop="65dp"-->
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+
+            <RelativeLayout
+                android:id="@+id/rrprog"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="230dp"
+                    android:layout_height="230dp"
+                    android:layout_gravity="center"
+                    android:maxHeight="5dp"
+                    android:minHeight="5dp" />
+            </RelativeLayout>
+
+            <!--<TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/rrprog"
+                android:layout_alignTop="@id/rrprog"
+                android:gravity="center"
+                android:text="@string/loading"
+                android:textColor="@color/mainBlue"
+                android:textSize="18dp" />-->
+        </RelativeLayout>
+    </RelativeLayout>
+<androidx.core.widget.NestedScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/nested_scroll_view"
+    android:visibility="visible"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+
+        <TextView
+            android:id="@+id/label_ls"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/gothic_bold"
+            android:gravity="right|center_vertical"
+            android:text="@string/label_ls"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/ls"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/input_border"
+            android:fontFamily="@font/gothic"
+            android:gravity="center|center_vertical"
+            android:text="165009876"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/label_ls"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_ls"
+            app:layout_constraintTop_toTopOf="@+id/label_ls" />
+
+        <TextView
+            android:id="@+id/label_pib"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/gothic_bold"
+            android:gravity="right|center_vertical"
+            android:text="@string/label_pib"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/label_ls"
+            app:layout_constraintTop_toBottomOf="@+id/label_ls" />
+
+        <TextView
+            android:id="@+id/pib"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:paddingRight="3dp"
+            android:background="@drawable/input_border"
+            android:fontFamily="@font/gothic"
+            android:gravity="center|center_vertical"
+            android:text="іванов п.і."
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/label_pib"
+            app:layout_constraintEnd_toEndOf="@+id/ls"
+            app:layout_constraintStart_toStartOf="@+id/ls"
+            app:layout_constraintTop_toTopOf="@+id/label_pib" />
+
+        <TextView
+            android:id="@+id/label_address"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/gothic_bold"
+            android:gravity="right"
+            android:text="@string/label_address"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/label_pib"
+            app:layout_constraintTop_toBottomOf="@+id/label_pib" />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_border"
+            android:fontFamily="@font/gothic"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingBottom="5dp"
+            android:text="Недрігайлівський район\nс. Вільшани\nвул. Сумська, 12"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/pib"
+            app:layout_constraintStart_toStartOf="@+id/pib"
+            app:layout_constraintTop_toTopOf="@+id/label_address" />
+
+
+        <TextView
+            android:id="@+id/label_payment"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/gothic_bold"
+            android:gravity="right"
+            android:text="@string/label_payment"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/label_address"
+            app:layout_constraintTop_toBottomOf="@+id/address" />
+
+        <TextView
+            android:id="@+id/payment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_border"
+            android:fontFamily="@font/gothic"
+            android:gravity="center|center_vertical"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="1225,26"
+            android:textColor="@color/orange"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="@+id/label_payment"
+            app:layout_constraintEnd_toStartOf="@+id/label_grn"
+            app:layout_constraintStart_toStartOf="@+id/address"
+            app:layout_constraintTop_toTopOf="@+id/label_payment" />
+
+        <TextView
+            android:id="@+id/label_grn"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gothic"
+            android:gravity="center"
+            android:text="@string/label_grn"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/payment"
+            app:layout_constraintEnd_toEndOf="@+id/address"
+            app:layout_constraintTop_toTopOf="@+id/payment" />
+
+
+        <TextView
+            android:id="@+id/label_consumption"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/gothic_bold"
+            android:gravity="center"
+            android:text="@string/label_consumption"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/label_grn"
+            app:layout_constraintStart_toStartOf="@+id/label_payment"
+            app:layout_constraintTop_toBottomOf="@+id/label_payment" />
+
+
+
+
+
+        <LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@+id/label_grn"
+            app:layout_constraintStart_toStartOf="@+id/label_payment"
+            app:layout_constraintTop_toBottomOf="@+id/label_consumption">
+
+            <TextView
+                android:id="@+id/label_on_consumption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothic"
+                android:paddingRight="5dp"
+                android:text="@string/label_on"
+                android:textAllCaps="true"
+                android:textColor="@color/orange"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/label_on_date_consumption"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothic"
+                android:text="01.02.2020"
+                android:textAllCaps="true"
+                android:textColor="@color/orange"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+        <!--<LinearLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="10dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="@+id/label_grn"
+            app:layout_constraintStart_toStartOf="@+id/label_payment"
+            app:layout_constraintTop_toBottomOf="@+id/label_consumption">
+
+            <TextView
+                android:id="@+id/label_from"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/gothic"
+                android:gravity="center"
+                android:text="@string/label_consumption_from"
+                android:textAllCaps="true"
+                android:textColor="@color/blue"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/consumption_date_from"
+                app:layout_constraintTop_toTopOf="@+id/consumption_date_from" />
+
+            <TextView
+                android:id="@+id/consumption_date_from"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/gothic"
+                android:text="01.01.2020"
+                android:textAllCaps="true"
+                android:textColor="@color/orange"
+                android:textSize="16sp"
+                tools:layout_editor_absoluteX="99dp"
+                tools:layout_editor_absoluteY="434dp" />
+
+            <TextView
+                android:id="@+id/label_to"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginRight="10dp"
+                android:fontFamily="@font/gothic"
+                android:text="@string/label_consumption_to"
+                android:textAllCaps="true"
+                android:textColor="@color/blue"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/consumption_date_from"
+                app:layout_constraintStart_toEndOf="@+id/consumption_date_from"
+                app:layout_constraintTop_toTopOf="@+id/consumption_date_from" />
+
+            <TextView
+                android:id="@+id/consumption_date_to"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothic"
+                android:text="01.02.2020"
+                android:textAllCaps="true"
+                android:textColor="@color/orange"
+                android:textSize="16sp"
+                app:layout_constraintBottom_toBottomOf="@+id/label_to"
+                app:layout_constraintStart_toEndOf="@+id/label_to"
+                app:layout_constraintTop_toTopOf="@+id/label_to" />
+        </LinearLayout>-->
+
+        <LinearLayout
+            android:id="@+id/gav"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@+id/linearLayout"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/label_zone1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gothic_bold"
+                    android:gravity="center"
+                    android:text="@string/label_zone1"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toStartOf="@+id/label_zone2"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_weight="1" />
+
+                <com.soe.superbill.view.SizeAwareTextView
+                    android:id="@+id/coefficient_zone1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center"
+                    android:text="@string/label_coef1"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue"
+
+                    android:visibility="gone"
+                    android:maxLines="1"
+                    app:autoSizeTextType="uniform"
+                    app:autoSizeMinTextSize="10sp"
+                    app:autoSizeMaxTextSize="16sp"
+                    app:autoSizeStepGranularity="0.5sp"
+                    app:layout_constraintEnd_toEndOf="@+id/label_zone1"
+                    app:layout_constraintStart_toStartOf="@+id/label_zone1"
+                    app:layout_constraintTop_toBottomOf="@+id/label_zone1" />
+                <TextView
+                    android:id="@+id/consumption_zone1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/orange"
+                    android:textSize="22sp"
+                    app:layout_constraintEnd_toEndOf="@+id/coefficient_zone1"
+                    app:layout_constraintStart_toStartOf="@+id/coefficient_zone1"
+                    app:layout_constraintTop_toBottomOf="@+id/barrier" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_zone2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/label_zone2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gothic_bold"
+                    android:gravity="center"
+                    android:text="@string/label_zone2"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toStartOf="@+id/label_zone3"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toEndOf="@+id/label_zone1"
+                    app:layout_constraintTop_toTopOf="@+id/label_zone1" />
+
+                <com.soe.superbill.view.SizeAwareTextView
+                    android:id="@+id/coefficient_zone2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center"
+                    android:text="@string/label_coef2"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue"
+
+                    android:visibility="gone"
+                    android:maxLines="1"
+                    app:autoSizeTextType="uniform"
+                    app:autoSizeMinTextSize="10sp"
+                    app:autoSizeMaxTextSize="16sp"
+                    app:autoSizeStepGranularity="0.5sp"
+                    app:layout_constraintEnd_toEndOf="@+id/label_zone2"
+                    app:layout_constraintStart_toStartOf="@+id/label_zone2"
+                    app:layout_constraintTop_toBottomOf="@+id/label_zone2" />
+                <TextView
+                    android:id="@+id/consumption_zone2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="12345678"
+                    android:textColor="@color/orange"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/barrier2"
+                    app:layout_constraintEnd_toEndOf="@+id/coefficient_zone2"
+                    app:layout_constraintStart_toStartOf="@+id/coefficient_zone2"
+                    app:layout_constraintTop_toBottomOf="@+id/barrier" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_zone3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/label_zone3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gothic_bold"
+                    android:gravity="center"
+                    android:text="@string/label_zone3"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp"
+                    app:layout_constraintEnd_toEndOf="@+id/linearLayout"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toEndOf="@+id/label_zone2"
+                    app:layout_constraintTop_toTopOf="@+id/label_zone2" />
+
+                <com.soe.superbill.view.SizeAwareTextView
+                    android:id="@+id/coefficient_zone3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center"
+                    android:text="@string/label_night"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue"
+
+                    android:visibility="gone"
+                    android:maxLines="1"
+                    app:autoSizeTextType="uniform"
+                    app:autoSizeMinTextSize="10sp"
+                    app:autoSizeMaxTextSize="16sp"
+                    app:autoSizeStepGranularity="0.5sp"
+                    app:layout_constraintEnd_toEndOf="@+id/label_zone3"
+                    app:layout_constraintStart_toStartOf="@+id/label_zone3"
+                    app:layout_constraintTop_toBottomOf="@+id/label_zone3" />
+                <TextView
+                    android:id="@+id/consumption_zone3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="12345678"
+                    android:textColor="@color/orange"
+                    android:textSize="24sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/barrier2"
+                    app:layout_constraintEnd_toEndOf="@+id/coefficient_zone3"
+                    app:layout_constraintStart_toStartOf="@+id/coefficient_zone3"
+                    app:layout_constraintTop_toBottomOf="@+id/barrier" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--<androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="coefficient_zone1,coefficient_zone2,coefficient_zone3" />-->
+
+        <!--<androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barrier2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="consumption_zone1,consumption_zone2,consumption_zone3" />-->
+
+        <TextView
+            android:id="@+id/label_calculated_indicators"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/gothic_bold"
+            android:gravity="center"
+            android:text="@string/label_calculated_indicators"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/label_grn"
+            app:layout_constraintStart_toStartOf="@+id/label_payment"
+            app:layout_constraintTop_toBottomOf="@+id/gav" />
+
+       <!-- <LinearLayout
+            android:id="@+id/linearLayout2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@+id/label_calculated_indicators"
+            app:layout_constraintStart_toStartOf="@+id/label_calculated_indicators"
+            app:layout_constraintTop_toBottomOf="@+id/label_calculated_indicators">
+
+            <TextView
+                android:id="@+id/label_on"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothic"
+                android:paddingRight="5dp"
+                android:text="@string/label_on"
+                android:textAllCaps="true"
+                android:textColor="@color/orange"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/label_on_date"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothic"
+                android:text="01.02.2020"
+                android:textAllCaps="true"
+                android:textColor="@color/orange"
+                android:textSize="16sp" />
+        </LinearLayout>-->
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="@+id/label_calculated_indicators"
+            app:layout_constraintStart_toStartOf="@+id/label_calculated_indicators"
+            app:layout_constraintTop_toBottomOf="@+id/label_calculated_indicators">
+            <!--app:layout_constraintTop_toBottomOf="@+id/linearLayout2"-->
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/calculated_indicator_zone1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center"
+                    android:text="123"
+                    android:textColor="@color/orange"
+                    android:textSize="22sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_calculated_indicator_zone2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/calculated_indicator_zone2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center"
+                    android:text="1"
+                    android:textColor="@color/orange"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_calculated_indicator_zone3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/calculated_indicator_zone3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center"
+                    android:text="1232"
+                    android:textColor="@color/orange"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!--<androidx.constraintlayout.widget.Group
+            android:id="@+id/group_zone2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="visible"
+            app:constraint_referenced_ids="label_zone2,coefficient_zone2,ll_consumption_zone2" />
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_zone3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="" />-->
+
+        <Button
+            android:id="@+id/btn_transmit_readings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/button_border"
+            android:fontFamily="@font/gothic_bold"
+            android:gravity="center"
+            android:text="@string/transmit_readings"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:onClick="OnActionButtonClick"
+            app:layout_constraintEnd_toEndOf="@+id/label_calculated_indicators"
+            app:layout_constraintStart_toStartOf="@+id/label_calculated_indicators"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+        <!--<Button
+            android:id="@+id/btn_order_service"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_border"
+            android:fontFamily="@font/gothic_bold"
+            android:gravity="center"
+            android:text="@string/order_services"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:onClick="OnActionButtonClick"
+            app:layout_constraintEnd_toEndOf="@+id/btn_transmit_readings"
+            app:layout_constraintStart_toStartOf="@+id/btn_transmit_readings"
+            app:layout_constraintTop_toBottomOf="@+id/btn_transmit_readings" />
+
+        &lt;!&ndash;app:autoSizeTextType="uniform"
+        app:autoSizeMinTextSize="12sp"
+        app:autoSizeMaxTextSize="100sp"
+        app:autoSizeStepGranularity="2sp"&ndash;&gt;
+
+        <Button
+            android:id="@+id/btn_get_invoice"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/button_border"
+            android:fontFamily="@font/gothic_bold"
+            android:gravity="center"
+            android:text="@string/get_invoice"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:onClick="OnActionButtonClick"
+            app:layout_constraintEnd_toEndOf="@+id/btn_order_service"
+            app:layout_constraintStart_toStartOf="@+id/btn_order_service"
+            app:layout_constraintTop_toBottomOf="@+id/btn_order_service" />-->
+
+        <LinearLayout
+            android:id="@+id/ll_buttons"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal"
+            android:weightSum="1"
+            app:layout_constraintEnd_toEndOf="@+id/btn_transmit_readings"
+            app:layout_constraintStart_toStartOf="@+id/btn_transmit_readings"
+            app:layout_constraintTop_toBottomOf="@+id/btn_transmit_readings"
+            >
+        <Button
+            android:id="@+id/btn_get_invoice"
+            android:layout_width="match_parent"
+            android:layout_weight="0.5"
+            android:layout_height="match_parent"
+           android:layout_marginRight="5dp"
+            android:background="@drawable/button_border"
+            android:fontFamily="@font/gothic_bold"
+
+            android:text="@string/get_invoice"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:onClick="OnActionButtonClick"
+
+             />
+
+        <Button
+            android:id="@+id/btn_payment"
+            android:layout_width="match_parent"
+            android:layout_weight="0.5"
+            android:layout_height="match_parent"
+           android:layout_marginLeft="5dp"
+            android:background="@drawable/button_border"
+            android:fontFamily="@font/gothic_bold"
+            android:text="@string/payment"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:onClick="OnActionButtonClick"
+
+            />
+        </LinearLayout>
+        <!--app:layout_constraintEnd_toEndOf="@+id/btn_get_invoice"
+        app:layout_constraintStart_toStartOf="@+id/btn_get_invoice"
+        app:layout_constraintTop_toBottomOf="@+id/btn_get_invoice"-->
+
+        <TextView
+            android:id="@+id/label_scheduled_shutdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/gothic_bold"
+            android:text="@string/label_scheduled_shutdown"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/ll_buttons"
+            app:layout_constraintTop_toBottomOf="@+id/ll_buttons" />
+        <!--app:layout_constraintStart_toStartOf="@+id/btn_payment"
+        app:layout_constraintTop_toBottomOf="@+id/btn_payment"-->
+
+        <TextView
+            android:id="@+id/value_scheduled_shutdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/gothic_bold"
+            android:text="@string/absent"
+            android:textAllCaps="true"
+            android:textColor="@color/orange"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/label_scheduled_shutdown"
+            app:layout_constraintStart_toEndOf="@+id/label_scheduled_shutdown"
+            app:layout_constraintTop_toBottomOf="@+id/ll_buttons" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_scheduled_shutdown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@+id/ll_buttons"
+            app:layout_constraintStart_toStartOf="@+id/label_scheduled_shutdown"
+            app:layout_constraintTop_toBottomOf="@+id/label_scheduled_shutdown">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+        <TextView
+            android:id="@+id/label_emergency_shutdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gothic_bold"
+            android:text="@string/label_emergency_shutdown"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/ll_buttons"
+            app:layout_constraintTop_toBottomOf="@+id/list_scheduled_shutdown" />
+
+        <TextView
+            android:id="@+id/value_emergency_shutdown"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:fontFamily="@font/gothic_bold"
+            android:text="@string/absent"
+            android:textAllCaps="true"
+            android:textColor="@color/orange"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/label_emergency_shutdown"
+            app:layout_constraintTop_toBottomOf="@+id/list_scheduled_shutdown" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/list_emergency_shutdown"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="@+id/ll_buttons"
+            app:layout_constraintStart_toStartOf="@+id/label_emergency_shutdown"
+            app:layout_constraintTop_toBottomOf="@+id/label_emergency_shutdown">
+
+        </androidx.recyclerview.widget.RecyclerView>
+        <!--<LinearLayout
+            android:id="@+id/emergency_shutdown_reason"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/label_emergency_shutdown"
+            app:layout_constraintStart_toStartOf="@+id/label_emergency_shutdown"
+            app:layout_constraintTop_toBottomOf="@+id/label_emergency_shutdown">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/emergency_label_beginning"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".50"
+                        android:text="@string/date"
+                        android:textColor="@color/blue"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/emergency_reason_beginning"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".50"
+                        android:paddingLeft="5dp"
+                        android:text="B2018-12-27 07:00:00"
+                        android:textColor="@color/blue"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/emergency_label_plan_end"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".50"
+                        android:text="@string/plan_avar"
+                        android:textColor="@color/blue"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/emergency_reason_plan_end"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_weight=".50"
+                        android:paddingLeft="5dp"
+                        android:text="P2018-12-27 07:00:00"
+                        android:textColor="@color/blue"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/emergency_label_fact_end"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".50"
+                        android:text="@string/fact_avar"
+                        android:textColor="@color/blue"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/emergency_reason_fact_end"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="bottom"
+                        android:layout_weight=".50"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:text="F2018-12-27 09:00:00 test test test test"
+                        android:textColor="@color/blue"
+                        android:textSize="18sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:id="@+id/emergency_label_reason"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".50"
+                        android:text="@string/reason"
+                        android:textColor="@color/blue"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/emergency_reason_value"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight=".50"
+                        android:paddingLeft="5dp"
+                        android:paddingRight="5dp"
+                        android:text="Аварийный ремонт РКТП-817,замена шкафа КТП-817"
+                        android:textColor="@color/blue"
+                        android:textSize="18sp" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>-->
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>
+</LinearLayout>

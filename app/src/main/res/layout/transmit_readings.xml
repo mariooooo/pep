@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal">
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:visibility="gone"
+        android:id="@+id/load">
+        <!--android:layout_marginTop="65dp"-->
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+
+            <RelativeLayout
+                android:id="@+id/rrprog"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="230dp"
+                    android:layout_height="230dp"
+                    android:layout_gravity="center"
+                    android:maxHeight="5dp"
+                    android:minHeight="5dp" />
+            </RelativeLayout>
+
+            <!--<TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/rrprog"
+                android:layout_alignTop="@id/rrprog"
+                android:gravity="center"
+                android:text="@string/loading"
+                android:textColor="@color/mainBlue"
+                android:textSize="18dp" />-->
+        </RelativeLayout>
+    </RelativeLayout>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scrollview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:fitsSystemWindows="true"
+    >
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/label"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/button_border"
+            android:fontFamily="@font/gothic"
+            android:gravity="center"
+            android:text="@string/title_transmit_readings"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/label_address"
+            android:layout_width="90dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="15dp"
+
+            android:fontFamily="@font/gothic_bold"
+            android:gravity="right"
+            android:text="@string/label_address"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/label"
+            app:layout_constraintTop_toBottomOf="@+id/label" />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:paddingRight="5dp"
+            android:background="@drawable/input_border"
+            android:fontFamily="@font/gothic"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingBottom="5dp"
+            android:text="Недрігайлівський район\nс. Вільшани\nвул. Сумська, 12"
+            android:textColor="@color/blue"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="@+id/label"
+            app:layout_constraintStart_toEndOf="@+id/label_address"
+            app:layout_constraintTop_toTopOf="@+id/label_address" />
+
+        <LinearLayout
+            android:id="@+id/linearLayoutLabels"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@+id/label"
+            app:layout_constraintTop_toBottomOf="@+id/address">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/label_zone1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+
+                    android:fontFamily="@font/gothic_bold"
+                    android:gravity="center"
+                    android:text="@string/label_zone1"
+                    android:textAllCaps="true"
+                    android:textColor="@color/orange"
+                    android:textSize="16sp" />
+
+                <com.soe.superbill.view.SizeAwareTextView
+                    android:id="@+id/coefficient_zone1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center"
+                    android:text="@string/label_coef1"
+                    android:textAllCaps="true"
+                    android:textColor="@color/orange"
+
+                    android:visibility="gone"
+                    android:maxLines="1"
+                    app:autoSizeTextType="uniform"
+                    app:autoSizeMinTextSize="10sp"
+                    app:autoSizeMaxTextSize="16sp"
+                    app:autoSizeStepGranularity="0.5sp"
+                    />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:id="@+id/ll_label_zone2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/label_zone2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gothic_bold"
+                    android:gravity="center"
+                    android:text="@string/label_zone2"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue"
+                    android:textSize="18sp" />
+
+                <com.soe.superbill.view.SizeAwareTextView
+                    android:id="@+id/coefficient_zone2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center"
+                    android:text="@string/label_coef2"
+                    android:textAllCaps="true"
+                    android:textColor="@color/blue"
+
+                    android:visibility="gone"
+                    android:maxLines="1"
+                    app:autoSizeTextType="uniform"
+                    app:autoSizeMinTextSize="10sp"
+                    app:autoSizeMaxTextSize="16sp"
+                    app:autoSizeStepGranularity="0.5sp"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_label_zone3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/label_zone3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gothic_bold"
+                    android:gravity="center"
+                    android:text="@string/label_zone3"
+                    android:textAllCaps="true"
+                    android:textColor="@color/green_zone3"
+                    android:textSize="18sp" />
+
+                <com.soe.superbill.view.SizeAwareTextView
+                    android:id="@+id/coefficient_zone3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center"
+                    android:text="@string/label_night"
+                    android:textAllCaps="true"
+                    android:textColor="@color/green_zone3"
+
+                    android:visibility="gone"
+                    android:maxLines="1"
+                    app:autoSizeTextType="uniform"
+                    app:autoSizeMinTextSize="10sp"
+                    app:autoSizeMaxTextSize="16sp"
+                    app:autoSizeStepGranularity="0.5sp"
+                    />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/label_current_readings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/gothic_bold"
+            android:gravity="center"
+            android:text="@string/label_current_readings"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/label"
+            app:layout_constraintStart_toStartOf="@+id/label"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayoutLabels" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/label_current_readings">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/current_zone1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:imeOptions="flagNoExtractUi"
+                    android:background="@drawable/input_border_transmit"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center"
+                    android:text=""
+                    android:digits="0123456789"
+                    android:enabled="true"
+                    android:inputType="number"
+                    android:textColor="@color/orange"
+                    android:textSize="22sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_current_zone2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/current_zone2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:imeOptions="flagNoExtractUi"
+                    android:background="@drawable/input_border_transmit"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center"
+                    android:text=""
+                    android:digits="0123456789"
+                    android:enabled="true"
+                    android:inputType="number"
+                    android:textColor="@color/blue"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_current_zone3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <EditText
+                    android:id="@+id/current_zone3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:imeOptions="flagNoExtractUi"
+                    android:background="@drawable/input_border_transmit"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center"
+                    android:text=""
+                    android:digits="0123456789"
+                    android:enabled="true"
+                    android:inputType="number"
+                    android:textColor="@color/green_zone3"
+                    android:textSize="24sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/label_last_readings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/gothic_bold"
+            android:gravity="center"
+            android:text="@string/label_last_readings"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/label_current_readings"
+            app:layout_constraintStart_toStartOf="@+id/label_current_readings"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout3" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/label_last_readings">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/last_zone1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center"
+                    android:text="568"
+                    android:textColor="@color/orange"
+                    android:textSize="22sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_last_zone2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/last_zone2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center"
+                    android:text="23892345"
+                    android:textColor="@color/blue"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_last_zone3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/last_zone3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center"
+                    android:text="01892317"
+                    android:textColor="@color/green_zone3"
+                    android:textSize="24sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/label_consumption_readings"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/gothic_bold"
+            android:gravity="center"
+            android:text="@string/label_consumption_readings"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/label_current_readings"
+            app:layout_constraintStart_toStartOf="@+id/label_current_readings"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
+
+        <LinearLayout
+            android:id="@+id/linearLayout5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            app:layout_constraintTop_toBottomOf="@+id/label_consumption_readings">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/consumption_zone1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/orange"
+                    android:textSize="22sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_consumption_zone2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/consumption_zone2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/blue"
+                    android:textSize="24sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_consumption_zone3"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:visibility="gone"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/consumption_zone3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center"
+                    android:text="0"
+                    android:textColor="@color/green_zone3"
+                    android:textSize="24sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/label_transmitted_readings_instruction"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/gothic_bold"
+            android:text="@string/label_transmitted_readings_instruction"
+            android:textColor="@color/orange"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/label_current_readings"
+            app:layout_constraintStart_toStartOf="@+id/label_current_readings"
+            app:layout_constraintTop_toBottomOf="@+id/linearLayout5" />
+
+        <Button
+            android:id="@+id/send"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/button_border"
+            android:fontFamily="@font/gothic_bold"
+            android:gravity="center"
+            android:text="@string/save"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:onClick="OnActionButtonClick"
+            app:layout_constraintEnd_toEndOf="@+id/label_transmitted_readings_instruction"
+            app:layout_constraintStart_toStartOf="@+id/label_transmitted_readings_instruction"
+            app:layout_constraintTop_toBottomOf="@+id/label_transmitted_readings_instruction" />
+
+        <Button
+            android:id="@+id/archive"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/button_border"
+            android:fontFamily="@font/gothic_bold"
+            android:gravity="center"
+            android:onClick="OnActionButtonClick"
+            android:text="@string/archive_transmitted_readings"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/label_transmitted_readings_instruction"
+            app:layout_constraintStart_toStartOf="@+id/label_transmitted_readings_instruction"
+            app:layout_constraintTop_toBottomOf="@+id/send"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintVertical_bias="0.0"
+            />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
+</LinearLayout>

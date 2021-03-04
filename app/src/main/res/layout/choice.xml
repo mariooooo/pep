@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:mask="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:fillViewport="true">
+<androidx.constraintlayout.widget.ConstraintLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_choice">
+    <!--android:background="@drawable/gradient"-->
+    <!--android:background="@color/blue"-->
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="250dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="20dp"
+
+        mask:layout_constraintEnd_toEndOf="parent"
+        mask:layout_constraintStart_toStartOf="parent"
+        mask:layout_constraintTop_toTopOf="parent"
+        mask:srcCompat="@drawable/logo_vertical_cut" />
+
+    <TextView
+        android:id="@+id/label_electrical_energy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/label_electrical_energy"
+        android:textColor="@color/yellow"
+        android:textSize="18sp"
+        android:fontFamily="@font/gothic"
+        mask:layout_constraintBottom_toTopOf="@+id/sign_up"
+        mask:layout_constraintEnd_toEndOf="@+id/imageView"
+        mask:layout_constraintHorizontal_bias="0.0"
+        mask:layout_constraintStart_toStartOf="@+id/imageView"
+        mask:layout_constraintTop_toBottomOf="@+id/imageView"
+        mask:layout_constraintVertical_bias="0.066" />
+
+    <TextView
+        android:id="@+id/label_region_logo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/gothic"
+        android:gravity="center"
+        android:text="@string/label_region_logo"
+        android:textColor="@color/yellow"
+        android:textSize="22sp"
+        app:layout_constraintVertical_bias="0.035"
+        mask:layout_constraintBottom_toTopOf="@+id/sign_up"
+        mask:layout_constraintEnd_toEndOf="@+id/label_electrical_energy"
+        mask:layout_constraintHorizontal_bias="0.0"
+        mask:layout_constraintStart_toStartOf="@+id/label_electrical_energy"
+        mask:layout_constraintTop_toBottomOf="@+id/label_electrical_energy" />
+
+    <TextView
+        android:id="@+id/sign_up"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="15dp"
+        android:background="@color/transparent"
+        android:fontFamily="@font/gothic"
+        android:gravity="center"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:text="Реєстрація"
+        android:textColor="@color/buttons_choice"
+        android:textSize="28sp"
+        mask:layout_constraintBottom_toTopOf="@+id/sign_in"
+        mask:layout_constraintEnd_toEndOf="@+id/imageView"
+        mask:layout_constraintStart_toStartOf="@+id/imageView"
+        mask:layout_constraintTop_toBottomOf="@+id/imageView"
+        mask:layout_constraintVertical_bias="1.0" />
+
+    <TextView
+        android:id="@+id/sign_in"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="55dp"
+        android:background="@color/transparent"
+        android:fontFamily="@font/gothic"
+        android:gravity="center"
+        android:paddingTop="5dp"
+        android:paddingBottom="5dp"
+        android:text="Вхід"
+        android:textColor="@color/buttons_choice"
+        android:textSize="28sp"
+        mask:layout_constraintBottom_toBottomOf="parent"
+        mask:layout_constraintEnd_toEndOf="@+id/sign_up"
+        mask:layout_constraintStart_toStartOf="@+id/sign_up" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

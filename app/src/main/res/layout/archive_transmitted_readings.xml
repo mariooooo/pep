@@ -1,0 +1,1000 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/label_address"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:paddingRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/gothic_bold"
+            android:gravity="right"
+            android:text="@string/label_address"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/input_border"
+            android:fontFamily="@font/gothic"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingBottom="5dp"
+            android:text="Недрігайлівський район\nс. Вільшани\nвул. Сумська, 12"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_address"
+            app:layout_constraintTop_toTopOf="@+id/label_address" />
+
+        <TextView
+            android:id="@+id/label_year"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:paddingRight="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="25dp"
+            android:fontFamily="@font/gothic_bold"
+            android:gravity="right|center_vertical"
+            android:text="@string/label_year"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            android:textSize="18sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/address" />
+
+        <com.skydoves.powerspinner.PowerSpinnerView
+            android:id="@+id/spinner"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:focusable="true"
+            android:background="@drawable/input_border"
+            android:foreground="?attr/selectableItemBackground"
+            android:gravity="center"
+            android:hint=""
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:textColor="@color/orange"
+            android:textColorHint="@color/orange"
+            android:textSize="16sp"
+            android:fontFamily="@font/gothic"
+            app:layout_constraintBottom_toBottomOf="@+id/label_year"
+            app:layout_constraintStart_toEndOf="@+id/label_year"
+            app:layout_constraintTop_toTopOf="@+id/label_year"
+
+            app:spinner_arrow_animate="true"
+            app:spinner_arrow_drawable="@drawable/arrow"
+            app:spinner_arrow_gravity="end"
+            app:spinner_arrow_padding="2dp"
+            app:spinner_divider_color="@color/blue"
+            app:spinner_divider_show="true"
+            app:spinner_divider_size="0.2dp"
+            app:spinner_popup_animation="dropdown"
+            app:spinner_popup_background="@color/white"
+            app:spinner_popup_elevation="20dp" />
+        <!--app:spinner_item_array="@array/array_years"-->
+        <!--<Spinner
+            android:id="@+id/spinner"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:background="@drawable/input_border"
+            app:layout_constraintBottom_toBottomOf="@+id/label_year"
+            app:layout_constraintStart_toEndOf="@+id/label_year"
+            app:layout_constraintTop_toTopOf="@+id/label_year" />-->
+
+        <TextView
+            android:id="@+id/label_select_year"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="15dp"
+            android:fontFamily="@font/gothic_bold_italic"
+            android:gravity="center|center_vertical"
+            android:paddingRight="10dp"
+            android:text="@string/label_select_year"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/spinner"
+            app:layout_constraintEnd_toEndOf="@+id/address"
+            app:layout_constraintStart_toEndOf="@+id/spinner"
+            app:layout_constraintTop_toTopOf="@+id/spinner" />
+
+        <TableLayout
+            android:id="@+id/table"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/blue"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="10dp"
+            android:stretchColumns="*"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_year">
+
+           <!-- <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/l1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.9"
+                    android:background="@drawable/button_border"
+                    android:fontFamily="@font/gothic_bold"
+                    android:gravity="center"
+                    android:paddingTop="5dp"
+                    android:paddingBottom="5dp"
+                    android:text="@string/column_month"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/header_zone1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_border"
+                    android:fontFamily="@font/gothic_bold"
+                    android:gravity="center|center_vertical"
+                    android:text="@string/column_archive_transmitted_readings_zone1"
+
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/header_zone2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_border"
+                    android:fontFamily="@font/gothic_bold"
+                    android:gravity="center|center_vertical"
+                    android:text="@string/column_archive_transmitted_readings_zone2"
+                    android:visibility="gone"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/header_zone3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_border"
+                    android:fontFamily="@font/gothic_bold"
+                    android:gravity="center|center_vertical"
+                    android:text="@string/column_archive_transmitted_readings_zone3"
+                    android:visibility="gone"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/l5"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/button_border"
+                    android:fontFamily="@font/gothic_bold"
+                    android:gravity="center|center_vertical"
+                    android:text="@string/column_source"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:maxLines="1"
+                    />
+                &lt;!&ndash;app:autoSizeTextType="uniform"
+                app:autoSizeMinTextSize="12sp"
+                app:autoSizeMaxTextSize="100sp"
+                app:autoSizeStepGranularity="2sp"&ndash;&gt;
+            </TableRow>-->
+
+            <!--<TableRow
+                android:id="@+id/row"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/month"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.9"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="2020-01"
+                    android:visibility="visible"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/zone1"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:visibility="visible"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/zone2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:visibility="visible"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/zone3"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:visibility="visible"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/source"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="Android"
+                    android:visibility="visible"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+            </TableRow>
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.9"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="2020-01"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="Контрольний огляд"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.9"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="2020-02"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="Android"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.9"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="2020-03"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="Android"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.9"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="2020-04"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="Android"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.9"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="2020-05"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="Android"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.9"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="2020-06"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="Android"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.9"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="2020-07"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="Android"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.9"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="2020-08"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="Android"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.9"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="2020-09"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="Android"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.9"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="2020-10"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="Android"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.9"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="2020-11"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="Android"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+            </TableRow>
+
+            <TableRow
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.9"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="2020-12"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="123456789"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@drawable/input_border"
+                    android:fontFamily="@font/gothic"
+                    android:gravity="center|center_vertical"
+                    android:text="Android"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+            </TableRow>-->
+        </TableLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

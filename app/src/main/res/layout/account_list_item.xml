@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="10dp"
+        android:background="@drawable/input_border"
+        android:orientation="vertical"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:id="@+id/ll_fio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/account_list_item_eic"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <!--<TextView
+                android:id="@+id/label_eic"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingRight="5dp"
+                android:text="ЕІС КОД"
+                android:fontFamily="@font/gothic"
+                android:textSize="22sp"
+                android:textColor="@color/white"
+                />-->
+
+            <TextView
+                android:id="@+id/ls"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="62Z5300333926310"
+                android:fontFamily="@font/gothic"
+                android:textSize="22sp"
+                android:textColor="@color/white"
+                />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/fio"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:gravity="center"
+            android:background="@drawable/account_list_item_fio"
+            android:text="ПРОКОПЕНКО А.В."
+            android:fontFamily="@font/gothic_bold"
+            android:textColor="@color/blue"
+            android:textSize="18sp"
+            />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:background="@drawable/input_border"
+            android:gravity="center"
+            android:text="Роменський район\nс. Андрішівка\nвул. Колгоспна, 8"
+            android:fontFamily="@font/gothic_bold"
+            android:textColor="@color/blue"
+            android:textSize="18sp"
+            />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

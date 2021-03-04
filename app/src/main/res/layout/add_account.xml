@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal">
+    <RelativeLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:visibility="gone"
+        android:id="@+id/load">
+        <!--android:layout_marginTop="65dp"-->
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:id="@+id/loading"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center">
+
+            <RelativeLayout
+                android:id="@+id/rrprog"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ProgressBar
+                    android:id="@+id/progressBar"
+                    android:layout_width="230dp"
+                    android:layout_height="230dp"
+                    android:layout_gravity="center"
+                    android:maxHeight="5dp"
+                    android:minHeight="5dp" />
+            </RelativeLayout>
+
+            <!--<TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@id/rrprog"
+                android:layout_alignTop="@id/rrprog"
+                android:gravity="center"
+                android:text="@string/loading"
+                android:textColor="@color/mainBlue"
+                android:textSize="18dp" />-->
+        </RelativeLayout>
+    </RelativeLayout>
+    <ScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/label"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="10dp"
+                android:background="@drawable/button_border"
+                android:fontFamily="@font/gothic"
+                android:gravity="center"
+                android:text="@string/label_add_account"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/label_ls"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/gothic_bold"
+                android:gravity="right|center_vertical"
+                android:paddingRight="10dp"
+                android:text="@string/label_ls"
+                android:textAllCaps="true"
+                android:textColor="@color/blue"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toStartOf="@+id/input_ls"
+                app:layout_constraintHorizontal_bias="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/label" />
+
+            <EditText
+                android:id="@+id/input_ls"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:background="@drawable/input_border"
+                android:fontFamily="@font/gothic_italic"
+                android:hint="@string/input_ls_hint"
+                android:imeOptions="actionNext|flagNoExtractUi"
+                android:inputType="textMultiLine|number"
+                android:singleLine="false"
+                android:nextFocusForward="@id/input_eic"
+                android:paddingLeft="10dp"
+                android:paddingRight="5dp"
+                android:textColorHint="@color/gray"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="@+id/label"
+                app:layout_constraintHorizontal_bias="2"
+                app:layout_constraintStart_toEndOf="@+id/label_ls"
+                app:layout_constraintTop_toTopOf="@+id/label_ls" />
+
+            <TextView
+                android:id="@+id/label_eic"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/gothic_bold"
+                android:gravity="right|center_vertical"
+                android:paddingRight="10dp"
+                android:text="@string/label_eic"
+                android:textAllCaps="true"
+                android:textColor="@color/blue"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/label_ls"
+                app:layout_constraintTop_toBottomOf="@+id/label_ls" />
+
+            <EditText
+                android:id="@+id/input_eic"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:background="@drawable/input_border"
+                android:fontFamily="@font/gothic_italic"
+                android:hint="@string/input_eic_hint"
+                android:imeOptions="actionDone|flagNoExtractUi"
+                android:inputType="text"
+                android:paddingLeft="10dp"
+                android:paddingRight="5dp"
+                android:textColorHint="@color/gray"
+                android:textSize="15sp"
+                app:layout_constraintEnd_toEndOf="@+id/input_ls"
+                app:layout_constraintStart_toEndOf="@+id/label_eic"
+                app:layout_constraintTop_toTopOf="@+id/label_eic" />
+
+            <TextView
+                android:id="@+id/label_region"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/gothic_bold"
+                android:gravity="right|center_vertical"
+                android:paddingRight="10dp"
+                android:text="@string/label_region"
+                android:textAllCaps="true"
+                android:textColor="@color/blue"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/label_eic"
+                app:layout_constraintTop_toBottomOf="@+id/label_eic" />
+
+            <com.skydoves.powerspinner.PowerSpinnerView
+                android:id="@+id/spinner"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:minHeight="50dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="5dp"
+                android:background="@drawable/input_border"
+                android:fontFamily="@font/gothic_italic"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center_vertical"
+                android:hint="@string/label_region_hint"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColorHint="@color/gray"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:spinner_dismiss_notified_select="true"
+
+
+                app:layout_constraintEnd_toEndOf="@+id/input_eic"
+                app:layout_constraintStart_toEndOf="@+id/label_region"
+                app:layout_constraintTop_toTopOf="@+id/label_region"
+                app:spinner_arrow_animate="true"
+                app:spinner_arrow_drawable="@drawable/arrow"
+                app:spinner_arrow_gravity="end"
+                app:spinner_arrow_padding="2dp"
+                app:spinner_divider_color="@color/blue"
+                app:spinner_divider_show="true"
+                app:spinner_divider_size="0.2dp"
+                app:spinner_popup_animation="dropdown"
+                app:spinner_popup_background="@color/white"
+                app:spinner_popup_elevation="2dp" />
+
+            <TextView
+                android:id="@+id/label_osr"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/gothic_bold"
+                android:gravity="right|center_vertical"
+                android:paddingRight="10dp"
+                android:text="@string/label_osr"
+                android:textAllCaps="true"
+                android:textColor="@color/blue"
+                android:textSize="16sp"
+                app:layout_constraintStart_toStartOf="@+id/label_region"
+                app:layout_constraintTop_toBottomOf="@+id/label_region" />
+
+            <com.skydoves.powerspinner.PowerSpinnerView
+                android:id="@+id/spinner_osr"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:minHeight="50dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="5dp"
+                android:background="@drawable/input_border"
+                android:fontFamily="@font/gothic_italic"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center_vertical"
+                android:hint="@string/label_osr_hint"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColorHint="@color/gray"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:spinner_dismiss_notified_select="true"
+
+
+                app:layout_constraintEnd_toEndOf="@+id/spinner"
+                app:layout_constraintStart_toEndOf="@+id/label_osr"
+                app:layout_constraintTop_toTopOf="@+id/label_osr"
+                app:spinner_arrow_animate="true"
+                app:spinner_arrow_drawable="@drawable/arrow"
+                app:spinner_arrow_gravity="end"
+                app:spinner_arrow_padding="2dp"
+                app:spinner_divider_color="@color/blue"
+                app:spinner_divider_show="true"
+                app:spinner_divider_size="0.2dp"
+                app:spinner_popup_animation="dropdown"
+                app:spinner_popup_background="@color/white"
+                app:spinner_popup_elevation="2dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/label_provider"
+                android:layout_width="110dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/gothic_bold"
+                android:gravity="right|center_vertical"
+                android:lines="1"
+                android:paddingRight="10dp"
+                android:text="@string/label_provider"
+                android:textAllCaps="true"
+                android:textColor="@color/blue"
+                app:autoSizeMaxTextSize="16sp"
+                app:autoSizeMinTextSize="10sp"
+                app:autoSizeTextType="uniform"
+                app:layout_constraintEnd_toStartOf="@+id/spinner_provider"
+                app:layout_constraintStart_toStartOf="@+id/label_osr"
+                app:layout_constraintTop_toBottomOf="@+id/spinner_osr" />
+
+            <com.skydoves.powerspinner.PowerSpinnerView
+                android:id="@+id/spinner_provider"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:minHeight="50dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="5dp"
+                android:background="@drawable/input_border"
+                android:fontFamily="@font/gothic_italic"
+                android:foreground="?attr/selectableItemBackground"
+                android:gravity="center_vertical"
+                android:hint="@string/label_provider_hint"
+                android:paddingTop="5dp"
+                android:paddingBottom="5dp"
+                android:textColorHint="@color/gray"
+                android:textColor="@color/black"
+                android:textSize="15sp"
+                app:spinner_dismiss_notified_select="true"
+
+
+                app:layout_constraintEnd_toEndOf="@+id/spinner"
+                app:layout_constraintStart_toEndOf="@+id/label_provider"
+                app:layout_constraintTop_toTopOf="@+id/label_provider"
+                app:spinner_arrow_animate="true"
+                app:spinner_arrow_drawable="@drawable/arrow"
+                app:spinner_arrow_gravity="end"
+                app:spinner_arrow_padding="2dp"
+                app:spinner_divider_color="@color/blue"
+                app:spinner_divider_show="true"
+                app:spinner_divider_size="0.2dp"
+                app:spinner_popup_animation="dropdown"
+                app:spinner_popup_background="@color/white"
+                app:spinner_popup_elevation="2dp" />
+
+            <CheckBox
+                android:id="@+id/checkBox_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:layout_marginTop="40dp"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                android:theme="@style/MyCheckBox"
+                app:layout_constraintEnd_toEndOf="@+id/label_provider"
+                app:layout_constraintStart_toStartOf="@+id/label_provider"
+                app:layout_constraintTop_toBottomOf="@+id/spinner_provider" />
+
+            <TextView
+                android:id="@+id/label_checkbox_send_email"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothic_italic"
+                android:gravity="center_vertical"
+                android:text="@string/label_checkbox_send_email"
+                android:textAllCaps="true"
+                android:textColor="@color/blue"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/checkBox_email"
+                app:layout_constraintStart_toEndOf="@+id/label_provider"
+                app:layout_constraintTop_toTopOf="@+id/checkBox_email" />
+
+            <CheckBox
+                android:id="@+id/checkBox_viber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:theme="@style/MyCheckBox"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                app:layout_constraintEnd_toEndOf="@+id/checkBox_email"
+                app:layout_constraintStart_toStartOf="@+id/checkBox_email"
+                app:layout_constraintTop_toBottomOf="@+id/checkBox_email" />
+
+            <TextView
+                android:id="@+id/label_checkbox_send_viber"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothic_italic"
+                android:gravity="center_vertical"
+                android:text="@string/label_checkbox_send_viber"
+                android:textAllCaps="true"
+                android:textColor="@color/blue"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/checkBox_viber"
+                app:layout_constraintStart_toStartOf="@+id/label_checkbox_send_email"
+                app:layout_constraintTop_toTopOf="@+id/checkBox_viber" />
+
+            <CheckBox
+                android:id="@+id/checkBox_telegram"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:theme="@style/MyCheckBox"
+                android:scaleX="1.5"
+                android:scaleY="1.5"
+                app:layout_constraintEnd_toEndOf="@+id/checkBox_viber"
+                app:layout_constraintStart_toStartOf="@+id/checkBox_viber"
+                app:layout_constraintTop_toBottomOf="@+id/checkBox_viber" />
+
+            <TextView
+                android:id="@+id/label_checkbox_send_telegram"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/gothic_italic"
+                android:gravity="center_vertical"
+                android:text="@string/label_checkbox_send_telegram"
+                android:textAllCaps="true"
+                android:textColor="@color/blue"
+                android:textSize="15sp"
+                app:layout_constraintBottom_toBottomOf="@+id/checkBox_telegram"
+                app:layout_constraintStart_toStartOf="@+id/label_checkbox_send_viber"
+                app:layout_constraintTop_toTopOf="@+id/checkBox_telegram" />
+
+            <Button
+                android:id="@+id/btn_enter"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/button_border"
+                android:fontFamily="@font/gothic_bold"
+                android:gravity="center"
+                android:text="@string/save"
+                android:textAllCaps="true"
+                android:textColor="@color/white"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/input_eic"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="@+id/label_eic"
+                app:layout_constraintTop_toBottomOf="@+id/label_checkbox_send_telegram"
+                app:layout_constraintVertical_bias="0.011" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</LinearLayout>

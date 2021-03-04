@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <LinearLayout
+        android:id="@+id/ll_email_notification"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal">
+    <CheckBox
+        android:id="@+id/checkBox_email_notification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        android:layout_marginRight="15dp"
+        android:theme="@style/MyCheckBox"
+         />
+
+        <TextView
+            android:id="@+id/label_checkbox_send_email_notification_settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/gothic_italic"
+            android:text="@string/label_checkbox_send_email_notification_settings"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/green" />
+
+    <LinearLayout
+        android:id="@+id/ll_email_invoice"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal">
+        <CheckBox
+            android:id="@+id/checkBox_email_invoice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:layout_marginRight="15dp"
+            android:theme="@style/MyCheckBox"
+            />
+
+        <TextView
+            android:id="@+id/label_checkbox_send_email_invoice_settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/gothic_italic"
+            android:text="@string/label_checkbox_send_email_invoice_settings"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/green" />
+
+    <LinearLayout
+        android:id="@+id/ll_viber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal">
+        <CheckBox
+            android:id="@+id/checkBox_viber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:layout_marginRight="15dp"
+            android:theme="@style/MyCheckBox"
+            />
+
+        <TextView
+            android:id="@+id/label_checkbox_send_viber_settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/gothic_italic"
+            android:text="@string/label_checkbox_send_viber_settings"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/green" />
+
+    <LinearLayout
+        android:id="@+id/ll_telegram"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:orientation="horizontal">
+        <CheckBox
+            android:id="@+id/checkBox_telegram"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleX="1.5"
+            android:scaleY="1.5"
+            android:layout_marginRight="15dp"
+            android:theme="@style/MyCheckBox"
+            />
+
+        <TextView
+            android:id="@+id/label_checkbox_send_telegram_settings"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/gothic_italic"
+            android:text="@string/label_checkbox_send_telegram_settings"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="2dp"
+        android:layout_marginBottom="2dp"
+        android:layout_marginTop="2dp"
+        android:background="@color/green" />
+
+    <!--<CheckBox
+        android:id="@+id/checkBox_viber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:theme="@style/MyCheckBox"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        app:layout_constraintEnd_toEndOf="@+id/checkBox_email"
+        app:layout_constraintStart_toStartOf="@+id/checkBox_email"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox_email" />
+
+    <TextView
+        android:id="@+id/label_checkbox_send_viber"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:fontFamily="@font/gothic_italic"
+        android:gravity="center_vertical"
+        android:text="@string/label_checkbox_send_viber"
+        android:textAllCaps="true"
+        android:textColor="@color/blue"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/checkBox_viber"
+        app:layout_constraintStart_toEndOf="@+id/checkBox_viber"
+        app:layout_constraintTop_toTopOf="@+id/checkBox_viber" />
+
+    <CheckBox
+        android:id="@+id/checkBox_telegram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:theme="@style/MyCheckBox"
+        android:scaleX="1.5"
+        android:scaleY="1.5"
+        app:layout_constraintEnd_toEndOf="@+id/checkBox_viber"
+        app:layout_constraintStart_toStartOf="@+id/checkBox_viber"
+        app:layout_constraintTop_toBottomOf="@+id/checkBox_viber" />
+
+    <TextView
+        android:id="@+id/label_checkbox_send_telegram"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:fontFamily="@font/gothic_italic"
+        android:gravity="center_vertical"
+        android:text="@string/label_checkbox_send_telegram"
+        android:textAllCaps="true"
+        android:textColor="@color/blue"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toBottomOf="@+id/checkBox_telegram"
+        app:layout_constraintStart_toEndOf="@+id/checkBox_telegram"
+        app:layout_constraintTop_toTopOf="@+id/checkBox_telegram" />-->
+</LinearLayout>

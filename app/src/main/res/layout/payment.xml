@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        >
+
+        <TextView
+            android:id="@+id/label_ls"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/gothic_bold"
+            android:gravity="right|center_vertical"
+            android:text="@string/label_ls"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/ls"
+            android:layout_width="0dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/input_border"
+            android:fontFamily="@font/gothic"
+            android:gravity="center|center_vertical"
+            android:text="165009876"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/label_ls"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_ls"
+            app:layout_constraintTop_toTopOf="@+id/label_ls" />
+
+        <TextView
+            android:id="@+id/label_address"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/gothic_bold"
+            android:gravity="right"
+            android:text="@string/label_address"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/label_ls"
+            app:layout_constraintTop_toBottomOf="@+id/label_ls" />
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_border"
+            android:fontFamily="@font/gothic"
+            android:gravity="left|center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingBottom="5dp"
+            android:text="Недрігайлівський район\nс. Вільшани\nвул. Сумська, 12"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@+id/ls"
+            app:layout_constraintStart_toStartOf="@+id/ls"
+            app:layout_constraintTop_toTopOf="@+id/label_address" />
+
+
+        <TextView
+            android:id="@+id/label_payment"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/gothic_bold"
+            android:gravity="right"
+            android:text="@string/label_payment"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="@+id/label_address"
+            app:layout_constraintTop_toBottomOf="@+id/address" />
+
+        <!--<EditText
+            android:id="@+id/current_zone1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:imeOptions="flagNoExtractUi"
+            android:background="@drawable/input_border"
+            android:fontFamily="@font/gothic"
+            android:gravity="center"
+            android:text="0"
+            android:digits="0123456789"
+            android:inputType="number"
+            android:textColor="@color/orange"
+            android:textSize="22sp" />-->
+        <EditText
+            android:id="@+id/payment"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/input_border"
+            android:digits="0123456789,."
+            android:fontFamily="@font/gothic"
+            android:gravity="center|center_vertical"
+            android:inputType="number"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="1225,26"
+            android:textColor="@color/orange"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="@+id/label_payment"
+            app:layout_constraintEnd_toStartOf="@+id/label_grn"
+            app:layout_constraintStart_toStartOf="@+id/address"
+            app:layout_constraintTop_toTopOf="@+id/label_payment" />
+        <!--<me.abhinay.input.CurrencyEditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="1225,26"
+            android:inputType="number"
+            android:textSize="22sp"
+            android:textColor="@color/orange"
+            android:textColorHint="@color/orange"
+            android:id="@+id/payment"
+            android:background="@drawable/input_border"
+            android:fontFamily="@font/gothic"
+            android:gravity="center|center_vertical"
+            app:layout_constraintBottom_toBottomOf="@+id/label_payment"
+            app:layout_constraintEnd_toStartOf="@+id/label_grn"
+            app:layout_constraintStart_toStartOf="@+id/address"
+            app:layout_constraintTop_toTopOf="@+id/label_payment"
+            />-->
+
+        <TextView
+            android:id="@+id/label_grn"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gothic"
+            android:gravity="center"
+            android:text="@string/label_grn"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toBottomOf="@+id/payment"
+            app:layout_constraintEnd_toEndOf="@+id/address"
+            app:layout_constraintTop_toTopOf="@+id/payment" />
+
+        <TextView
+            android:id="@+id/label_payment_in_processing"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/gothic_bold"
+            android:gravity="right"
+            android:text="@string/label_payment_in_processing"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@+id/label_payment"
+            app:layout_constraintTop_toBottomOf="@+id/label_payment" />
+
+        <TextView
+            android:id="@+id/payment_in_proccesing"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:background="@drawable/input_border"
+            android:fontFamily="@font/gothic"
+            android:gravity="center"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp"
+            android:text="163,25"
+            android:textColor="@color/blue"
+            android:textSize="22sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/label_payment_in_processing"
+            app:layout_constraintEnd_toEndOf="@+id/payment"
+            app:layout_constraintStart_toEndOf="@+id/label_payment_in_processing"
+            app:layout_constraintTop_toTopOf="@+id/label_payment_in_processing" />
+
+        <TextView
+            android:id="@+id/label_grn_processing"
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/gothic"
+            android:gravity="center"
+            android:text="@string/label_grn"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@+id/payment_in_proccesing"
+            app:layout_constraintEnd_toEndOf="@+id/label_grn"
+            app:layout_constraintStart_toEndOf="@+id/payment_in_proccesing"
+            app:layout_constraintTop_toTopOf="@+id/payment_in_proccesing" />
+
+        <androidx.constraintlayout.widget.Group
+            android:id="@+id/group_payment_processing"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            app:constraint_referenced_ids="label_payment_in_processing,payment_in_proccesing,label_grn_processing" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="240dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="@+id/address"
+            app:layout_constraintStart_toStartOf="@+id/label_payment"
+            app:layout_constraintTop_toBottomOf="@+id/label_payment_in_processing"
+            app:srcCompat="@drawable/withoutbackground" />
+
+        <Button
+            android:id="@+id/btn_pay"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/button_border"
+            android:fontFamily="@font/gothic_bold"
+            android:gravity="center"
+            android:onClick="OnActionButtonClick"
+            android:text="@string/pay"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="@+id/address"
+            app:layout_constraintStart_toStartOf="@+id/label_payment"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <Button
+            android:id="@+id/btn_archive_accruals_and_payments"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/button_border"
+            android:fontFamily="@font/gothic_bold"
+            android:gravity="center"
+            android:onClick="OnActionButtonClick"
+            android:text="@string/archive_accruals_and_payments"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/address"
+            app:layout_constraintStart_toStartOf="@+id/label_payment"
+            app:layout_constraintTop_toBottomOf="@+id/btn_pay" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>

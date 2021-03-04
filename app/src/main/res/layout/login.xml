@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:mask="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:fillViewport="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        >
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/logo_vertical_cut" />
+
+        <TextView
+            android:id="@+id/label_login"
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="35dp"
+            android:fontFamily="@font/gothic_bold"
+            android:gravity="right|center_vertical"
+            android:paddingRight="10dp"
+            android:singleLine="true"
+            android:text="@string/label_login"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <EditText
+            android:id="@+id/input_login"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="35dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/input_border"
+            android:fontFamily="@font/gothic_italic"
+            android:hint="@string/input_login_hint"
+            android:imeOptions="actionNext|flagNoExtractUi"
+            android:nextFocusDown="@+id/wrapper_password"
+            android:nextFocusForward="@id/wrapper_password"
+            android:inputType="textEmailAddress|textMultiLine"
+            android:paddingLeft="10dp"
+            android:paddingRight="5dp"
+            android:textColorHint="@color/gray"
+            android:textSize="16sp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/label_login"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        <!--android:text="denys.davydov.94@gmail.com"-->
+
+        <TextView
+            android:id="@+id/label_password"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/gothic_bold"
+            android:gravity="right|center_vertical"
+            android:paddingRight="10dp"
+            android:text="@string/label_password"
+            android:textAllCaps="true"
+            android:textColor="@color/blue"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@+id/input_login"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_weight="1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/label_login" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/wrapper_password"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            app:hintEnabled="false"
+            app:layout_constraintEnd_toEndOf="@+id/input_login"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintHorizontal_weight="2"
+            app:layout_constraintStart_toEndOf="@+id/label_password"
+            app:layout_constraintTop_toBottomOf="@+id/input_login"
+            app:passwordToggleEnabled="true">
+
+            <EditText
+                android:id="@+id/input_password"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+
+                android:background="@drawable/input_border"
+                android:fontFamily="@font/gothic_italic"
+                android:hint="@string/input_password_hint"
+                android:imeOptions="actionDone|flagNoExtractUi"
+                android:inputType="textPassword"
+                android:nextFocusForward="@id/input_password_repeat"
+                android:paddingLeft="10dp"
+                android:paddingRight="5dp"
+                android:singleLine="true"
+
+                android:textColorHint="@color/gray"
+                android:textSize="16sp" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <!--android:text="qwerty123"-->
+
+        <!--<com.suke.widget.SwitchButton
+            android:id="@+id/switch_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="@+id/switchCompat"
+            app:layout_constraintStart_toStartOf="@+id/switchCompat"
+            app:layout_constraintTop_toBottomOf="@+id/switchCompat"
+            app:sb_button_color="@color/grayY"
+            app:sb_show_indicator="false"
+            app:sb_uncheck_color="@color/blue" />-->
+
+
+
+
+
+
+
+        <!--<androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchCompat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"
+            android:thumb="@drawable/switch_compat_custom"
+            app:layout_constraintStart_toEndOf="@+id/label_password"
+            app:layout_constraintTop_toBottomOf="@+id/wrapper_password"
+            app:showText="false"
+            app:switchMinWidth="80dp"
+            app:track="@drawable/switch_compat_custom_track" />
+
+        <TextView
+            android:id="@+id/remember"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:layout_marginTop="30dp"
+            android:fontFamily="@font/gothic_italic"
+            android:gravity="center_vertical"
+            android:text="@string/remember"
+            android:textColor="@color/blue"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/switchCompat"
+            app:layout_constraintEnd_toEndOf="@+id/wrapper_password"
+            app:layout_constraintStart_toEndOf="@+id/switchCompat"
+            app:layout_constraintTop_toBottomOf="@+id/wrapper_password" />
+
+        <TextView
+            android:id="@+id/forgot_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/gothic_italic"
+            android:gravity="center_vertical"
+            android:text="@string/forgot_password"
+            android:textColor="@color/blue"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/wrapper_password"
+            app:layout_constraintStart_toStartOf="@+id/remember"
+            app:layout_constraintTop_toBottomOf="@+id/remember" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginBottom="20dp"
+
+            android:background="@drawable/button_border"
+            android:fontFamily="@font/gothic_bold"
+            android:text="@string/enter"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/forgot_password"
+            app:layout_constraintVertical_bias="0.0" />-->
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/switchCompat"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:thumb="@drawable/switch_compat_custom"
+            app:layout_constraintStart_toEndOf="@+id/label_password"
+            app:layout_constraintTop_toBottomOf="@+id/btn_login"
+            app:showText="false"
+            app:switchMinWidth="60dp"
+            app:track="@drawable/switch_compat_custom_track" />
+
+        <TextView
+            android:id="@+id/remember"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="30dp"
+            android:fontFamily="@font/gothic_italic"
+            android:gravity="center_vertical"
+            android:text="@string/remember"
+            android:textColor="@color/blue"
+            android:textSize="14sp"
+            app:layout_constraintBottom_toBottomOf="@+id/switchCompat"
+            app:layout_constraintEnd_toEndOf="@+id/wrapper_password"
+            app:layout_constraintStart_toEndOf="@+id/switchCompat"
+            app:layout_constraintTop_toBottomOf="@+id/btn_login" />
+
+        <TextView
+            android:id="@+id/forgot_password"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:fontFamily="@font/gothic_italic"
+            android:gravity="center_vertical"
+            android:text="@string/forgot_password"
+            android:textColor="@color/blue"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="@+id/wrapper_password"
+            app:layout_constraintStart_toStartOf="@+id/remember"
+            app:layout_constraintTop_toBottomOf="@+id/remember" />
+
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/button_border"
+            android:fontFamily="@font/gothic_bold"
+            android:text="@string/enter"
+            android:textAllCaps="true"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/label_password"
+            app:layout_constraintTop_toBottomOf="@+id/wrapper_password" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
